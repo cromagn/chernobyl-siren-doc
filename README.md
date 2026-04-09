@@ -1,72 +1,119 @@
-# Chernobyl Alarm Siren Documentation
+# ☢️ Chernobyl Alarm Siren — Reverse Engineering & Documentation
 
-Documentation project for a Soviet-era alarm siren circuit associated with the Chernobyl alarm infrastructure.
+![Status](https://img.shields.io/badge/status-work_in_progress-orange)
+![License](https://img.shields.io/badge/license-MIT%20%2B%20CC--BY-blue)
+![KiCad](https://img.shields.io/badge/KiCad-9.x-blue)
 
-## Purpose
+---
 
-This repository collects and documents:
-- the original schematic scan
-- original component datasheets
-- reconstructed SPICE/LTspice models
-- a modern-build BOM for study and bench replication
-- KiCad reconstruction work
-- notes about assumptions, substitutions, and uncertainties
+## 🎥 Source Video
 
-This project is intended for historical, educational, and technical documentation.
+The original schematic was derived from this video:
 
-## Repository structure
+👉 **[Watch on YouTube](https://www.youtube.com/watch?v=xC0qYnh_3Fw)**
+
+---
+
+## 🧭 Why this project exists
+
+This repository aims to preserve, understand, and reconstruct a piece of **analog engineering history**.
+
+The circuit analyzed here represents:
+
+* Soviet-era semiconductor design choices
+* mixed germanium / silicon transistor behavior
+* analog sound generation techniques used in critical infrastructure
+* a real-world artifact tied to one of the most significant events in modern history
+
+This is not just a circuit.
+It is **engineering under constraints, in context, and under pressure**.
+
+---
+
+## 📦 Repository structure
 
 ```text
-assets/        Original images and scans
-bom/           BOM files for KiCad / Digi-Key
-datasheets/    Original component datasheets
-docs/          Technical notes and reconstruction notes
-hardware/      KiCad schematic files and related material
+assets/        Original scans and images
+datasheets/    Original Soviet component datasheets
+hardware/      KiCad schematic reconstruction
 spice/         LTspice / ngspice models
+bom/           BOMs (modern + KiCad import)
+docs/          Technical notes and assumptions
 ```
 
-## Original parts identified so far
+---
 
-### Transistors
-- MP26B / МП26Б — germanium PNP
-- P702 / П702 — silicon NPN power transistor
+## 🔬 What is inside
 
-### Diodes
-- D237A / Д237А
+### 🧾 Original components (identified)
 
-### Capacitors
-- K50-6 / К50-6
-- K42U-2 / К42У-2
+| Type       | Original Part   | Description       |
+| ---------- | --------------- | ----------------- |
+| Transistor | MP26B / МП26Б   | Germanium PNP     |
+| Transistor | P702 / П702     | Silicon NPN power |
+| Diode      | D237A / Д237А   | Rectifier         |
+| Capacitor  | K50-6 / К50-6   | Electrolytic      |
+| Capacitor  | K42U-2 / К42У-2 | Film              |
+| Speaker    | 4GD-35 / 4ГД-35 | 8Ω loudspeaker    |
 
-### Speaker
-- 4GD-35 / 4ГД-35, 8 ohm
+---
 
-## Important note on simulation and replication
+## 🧪 Simulation
 
-The currently included SPICE models are engineering approximations, not official vendor models.
+```spice
+.include chernobyl_siren_models.lib
+```
 
-A bench-built modern version may not sound exactly like the original, especially if:
-- silicon substitutes are used in place of germanium devices
-- the original loudspeaker is replaced
-- transistor leakage and temperature behavior differ from original Soviet parts
+⚠️ Models are **engineering approximations**, not official vendor models.
 
-## Status
+---
 
-Work in progress.
+## ⚠️ Authenticity vs reproducibility
 
-Current status:
-- [x] original schematic scan collected
-- [x] original transistor datasheets collected
-- [x] initial LTspice models prepared
-- [x] initial Digi-Key BOM prepared
-- [ ] KiCad schematic fully validated
-- [ ] waveform validation against hardware
-- [ ] exact historical configuration verified
+| Mode          | Description                             |
+| ------------- | --------------------------------------- |
+| 🟢 Historical | Original components, authentic behavior |
+| 🔵 Modern     | Substitutes, reproducible build         |
 
-## License
+👉 These will **not sound identical**
 
-Documentation text in this repository is released under CC BY 4.0 unless otherwise stated.
+---
 
-SPICE models, scripts, and original reconstruction files are released under MIT unless otherwise stated.
+## 🔍 Open questions
 
-Scanned historical materials may be subject to their original rights status; they are included here for identification, preservation, and study.
+* R6 / R7 / R8 network
+* C6 routing
+* Output return path
+
+See `docs/reconstruction-notes.md`
+
+---
+
+## 🤝 Contributing
+
+Contributions welcome:
+
+* schematic fixes
+* better SPICE models
+* historical sources
+* real measurements
+
+---
+
+## ⚖️ License
+
+* Documentation → CC BY 4.0
+* Technical assets → MIT
+
+---
+
+## 🧭 Final note
+
+This project sits at the intersection of:
+
+* electronics
+* history
+* reverse engineering
+
+It is an attempt to understand not only *how it works*,
+but also *why it was built that way*.
