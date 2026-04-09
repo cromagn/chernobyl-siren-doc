@@ -1,0 +1,68 @@
+* Chernobyl siren - LTspice starter netlist
+* Based on interpreted KiCad schematic.
+* This is a simulation-oriented reconstruction, not a guaranteed 1:1 capture
+* of every ambiguous connection in the scan.
+
+.param alpha=0.50
+.param R13tot=680
+.param R121v=68
+
+V1 VNEG 0 -24
+
+* Stage 1
+R1 VNEG N1 820
+R2 VNEG N2 12k
+R3 VNEG N3 12k
+R13A VNEG NCTRL {R13tot*alpha+1m}
+R13B NCTRL N4A {R13tot*(1-alpha)+1m}
+R4 N4A N4 240
+C1 N1 N2 50u
+C2 N3 N4 50u
+Q1 N1 N3 0 MP26B_REAL
+Q2 N4 N2 0 MP26B_REAL
+
+* Stage 2
+R5 VNEG N5 3.3k
+R6 NCTRL N6 62k
+R7 N7 NCTRL 62k
+R8 VNEG N8 3.3k
+C3 N5 N6 2.2n
+C4 N7 N8 2.2n
+Q3 N5 N7 0 MP26B_REAL
+Q4 N8 N6 N9 MP26B_REAL
+R9 N9 0 3.3k
+
+* Driver / output stage
+R10 VNEG N10 560
+Q5 N9 N10 0 MP26B_REAL
+
+R11 VNEG N12 240
+R12 N13 0 240
+Q6 N12 N10 N13 MP26B_REAL
+
+D1 N12 N14 D237A_REAL
+D2 N13 N15 D237A_REAL
+
+Q7 VNEG N14 N16 P702_REAL
+Q8 N16 N15 0 P702_REAL
+
+C6 VNEG N16 2000u
+C5 N16 OUT 2000u
+
+* Load approximation
+RLOAD OUT 0 8
+R121 OUT 0 {R121v}
+
+* Startup assist
+.ic V(N1)=-0.10 V(N5)=-0.20 V(N16)=-1
+
+.tran 0 1 startup
+.options plotwinsize=0
+
+* Models
+.model MP26B_REAL PNP(IS=2e-7 BF=55 BR=8 VAF=25 IKF=0.015 ISE=8e-7 NE=1.35 ISC=2e-7 NC=1.6 RB=12 RE=1.2 RC=1.0 CJE=180p VJE=0.18 MJE=0.33 CJC=55p VJC=0.22 MJC=0.33 TF=220n TR=8u EG=0.67 XTI=2 XTB=1.6)
+.model MP26B_DIRTY PNP(IS=5e-7 BF=45 BR=6 VAF=18 IKF=0.01 ISE=2e-6 NE=1.4 ISC=4e-7 NC=1.7 RB=18 RE=1.8 RC=1.5 CJE=200p VJE=0.18 MJE=0.35 CJC=60p VJC=0.22 MJC=0.35 TF=300n TR=12u EG=0.67 XTI=2.2 XTB=1.8)
+.model P702_REAL NPN(IS=5e-11 BF=30 BR=5 VAF=50 IKF=1.5 ISE=1e-10 NE=1.6 NR=1.2 RB=0.5 RE=0.05 RC=0.03 CJE=300p CJC=120p TF=400n TR=5u XTB=1.5 EG=1.11 XTI=3 KF=1e-14 AF=1)
+.model D237A_REAL D(IS=2e-8 N=1.8 RS=0.25 BV=200 IBV=50u CJO=35p M=0.35 VJ=0.65 TT=8u EG=1.11 XTI=3)
+
+.end
