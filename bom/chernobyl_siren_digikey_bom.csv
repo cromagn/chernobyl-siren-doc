@@ -1,0 +1,16 @@
+Quantity,Manufacturer Part Number,Customer Reference,Description,Notes
+6,BC557BTA,T1-T6,"PNP transistor, TO-92",Modern silicon substitute for original MP26B germanium PNP
+2,BD13916STU,T7-T8,"NPN power transistor, TO-126-3",Modern substitute for original P702
+2,1N4007RLG,D1-D2,1A 1000V axial diode,Modern substitute for original D237A
+1,MFR1WSFBE52-820R,R1,820 ohm 1W axial resistor,
+2,FMP200FBF52-12K,R2-R3,12k ohm axial resistor,2W part used as safe over-spec substitute for original 0.5W
+3,RNS1FTD240R,"R4,R11,R12",240 ohm 1W axial resistor,
+3,FMP200FRF52-3K3,"R5,R8,R9",3.3k ohm axial resistor,2W part used as safe over-spec substitute for original 0.5W
+2,FMP200FRF52-62K,R6-R7,62k ohm axial resistor,2W part used as safe over-spec substitute for original 0.5W
+1,MFR2WSFTF52-560R,R10,560 ohm axial resistor,2W part used as safe over-spec substitute for original 0.5W
+1,3266X-1-102LF,R13,1k ohm trimmer potentiometer,Approximate substitute; original schematic shows 680 ohm potentiometer
+1,3386G-1-680,R121,68 ohm trimmer potentiometer,Direct value match
+2,UPV1H470MGD1TA,C1-C2,47uF 50V radial electrolytic capacitor,Used in place of original 50uF 50V
+2,B32641H0222J000,C3-C4,2.2nF 1kV radial film capacitor,
+2,UKA1H222MHD,C5-C6,2200uF 50V radial electrolytic capacitor,Used in place of original 2000uF 50V
+1,WSPM-3020W,G1,8 ohm speaker,Modern 8 ohm speaker substitute; not physically equivalent to original 4GD-35

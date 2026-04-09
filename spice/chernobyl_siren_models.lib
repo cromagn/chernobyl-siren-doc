@@ -1,0 +1,45 @@
+* Chernobyl Siren - SPICE Models (Approximate)
+
+* MP26B - Germanium PNP (approx using AC128-like behavior)
+.model MP26B_APX PNP (
++ IS=17u
++ BF=90
++ RE=0.22
++ BR=0.1
++ VAF=30
++ ISE=190n
++ TF=106n
++ TR=10u
++ CJC=100p
+)
+
+* P702 - Silicon NPN Power (approx using BD139-like behavior)
+.model P702_APX NPN (
++ IS=1e-12
++ BF=80
++ BR=5
++ VAF=100
++ IKF=0.5
++ ISE=1e-13
++ NE=1.5
++ NR=1.0
++ RB=1
++ RE=0.1
++ RC=0.05
++ CJE=150p
++ CJC=60p
++ TF=200n
++ TR=2u
+)
+
+* D237A - Rectifier diode (approx using 1N4007)
+.model D237A_APX D (
++ IS=76.9p
++ RS=0.042
++ BV=1000
++ IBV=5u
++ CJO=26.5p
++ M=0.333
++ N=1.45
++ TT=4.32u
+)
