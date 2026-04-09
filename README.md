@@ -23,7 +23,7 @@ This repository aims to preserve, understand, and reconstruct a piece of **analo
 The circuit analyzed here represents:
 
 * Soviet-era semiconductor design choices
-* germanium  transistor behavior
+* germanium  transistor & diode behavior
 * analog sound generation techniques used in critical infrastructure
 * a real-world artifact tied to one of the most significant events in modern history
 
