@@ -1,4 +1,4 @@
-![Chernobyl Siren](assets/hero.png)
+![Chernobyl Siren](assets/hero.jpg)
 
 # ☢️ Chernobyl Alarm Siren — Reverse Engineering & Documentation
 
