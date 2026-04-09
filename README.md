@@ -1,3 +1,5 @@
+![Chernobyl Siren](assets/hero.png)
+
 # ☢️ Chernobyl Alarm Siren — Reverse Engineering & Documentation
 
 ![Status](https://img.shields.io/badge/status-work_in_progress-orange)
