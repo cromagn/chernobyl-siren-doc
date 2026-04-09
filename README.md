@@ -21,7 +21,7 @@ This repository aims to preserve, understand, and reconstruct a piece of **analo
 The circuit analyzed here represents:
 
 * Soviet-era semiconductor design choices
-* mixed germanium / silicon transistor behavior
+* germanium  transistor behavior
 * analog sound generation techniques used in critical infrastructure
 * a real-world artifact tied to one of the most significant events in modern history
 
@@ -50,7 +50,7 @@ docs/          Technical notes and assumptions
 | Type       | Original Part   | Description       |
 | ---------- | --------------- | ----------------- |
 | Transistor | MP26B / МП26Б   | Germanium PNP     |
-| Transistor | P702 / П702     | Silicon NPN power |
+| Transistor | P702 / П702     | Germanium NPN power |
 | Diode      | D237A / Д237А   | Rectifier         |
 | Capacitor  | K50-6 / К50-6   | Electrolytic      |
 | Capacitor  | K42U-2 / К42У-2 | Film              |
@@ -81,9 +81,8 @@ docs/          Technical notes and assumptions
 
 ## 🔍 Open questions
 
-* R6 / R7 / R8 network
-* C6 routing
-* Output return path
+* 
+
 
 See `docs/reconstruction-notes.md`
 
