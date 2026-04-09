@@ -8,7 +8,7 @@
 
 ## 🎥 Source Video
 
-The original schematic was derived from this video: The Last Alarm of Chernobyl's SKALA Computer (Chornobyl Family):
+The original schematic was derived from this video: The Last Alarm of Chernobyl's SKALA Computer (Chornobyl Family)
 
 👉 **[Watch on YouTube](https://www.youtube.com/watch?v=xC0qYnh_3Fw)**
 
