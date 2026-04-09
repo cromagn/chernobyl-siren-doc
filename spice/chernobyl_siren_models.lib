@@ -106,3 +106,31 @@
 + N=1.45
 + TT=4.32u
 )
+* D237A improved model (datasheet-fitted)
+
+.model D237A_REAL D (
++ IS=2e-8
++ N=1.8
++ RS=0.25
++ BV=200
++ IBV=50u
++ CJO=35p
++ M=0.35
++ VJ=0.65
++ TT=8u
++ EG=1.11
++ XTI=3
+)
+.model D237A_DIRTY D (
++ IS=5e-8
++ N=2.0
++ RS=0.4
++ BV=180
++ IBV=80u
++ CJO=50p
++ M=0.4
++ VJ=0.6
++ TT=15u
++ EG=1.11
++ XTI=3.5
+)
